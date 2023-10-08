@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 
 class GameCenterView extends StatefulWidget {
   const GameCenterView({Key? key}) : super(key: key);
@@ -8,7 +11,15 @@ class GameCenterView extends StatefulWidget {
 }
 
 class _GameCenterViewState extends State<GameCenterView> {
-  bool isSelected = false;
+  List<Color> containerColors = [
+    Colors.green,
+    Colors.red,
+    Colors.blue,
+    Colors.yellow,
+  ];
+ int selectedContainerIndex=-1;
+  int isSelected = 0;
+  String picked='';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,45 +74,114 @@ class _GameCenterViewState extends State<GameCenterView> {
                         onTap: () {
                           print('object');
                           setState(() {
-                            isSelected = !isSelected;
+
+                            isSelected =1;
+                            if(isSelected==1){
+                              containerColors[1];
+                            }
+
+
                           });
-                          print(isSelected);
+                          print(containerColors[1]);
                         },
-                        child: Container(
+                        child: isSelected==1?Container(
                           height: 55,
                           width: 55,
-                          color: isSelected ? Colors.red : Colors.green,
+                        decoration: BoxDecoration(
+
+                          color:Colors.green,
+
+                          border: Border.all(color: Colors.white,width: 1.0)
+                        ),
+                        ):Container(
+                          height: 55,
+                          width: 55,
+                          decoration: BoxDecoration(
+                              color: Colors.green,
+
+                          ),
                         )),
                     const SizedBox(
                       width: 15,
                     ),
                     InkWell(
-                      onTap: () {
-                        //
-                        isSelected = !isSelected;
-                      },
-                      child: Container(
-                        height: 55,
-                        width: 55,
-                        color: isSelected ? Colors.green : Colors.red,
-                      ),
-                    ),
+                        onTap: () {
+                          print('object');
+                          setState(() {
+                            isSelected = 2;
+
+                          });
+                          print(isSelected);
+                        },
+                        child: isSelected==2?Container(
+                          height: 55,
+                          width: 55,
+                          decoration: BoxDecoration(
+                              color: Colors.red,
+                              border: Border.all(color: Colors.white,width: 1.0)
+                          ),
+                        ):Container(
+                          height: 55,
+                          width: 55,
+                          decoration: BoxDecoration(
+                              color: Colors.red,
+
+                          ),
+                        )),
                     const SizedBox(
                       width: 15,
                     ),
-                    Container(
-                      height: 55,
-                      width: 55,
-                      color: Colors.blue,
-                    ),
+                    InkWell(
+                        onTap: () {
+                          print('object');
+                          setState(() {
+                            isSelected=3;
+
+                          });
+                          print(isSelected);
+                        },
+                        child: isSelected==3?Container(
+                          height: 55,
+                          width: 55,
+                          decoration: BoxDecoration(
+                              color: Colors.blue,
+                              border: Border.all(color: Colors.white,width: 1.0)
+                          ),
+                        ):Container(
+                          height: 55,
+                          width: 55,
+                          decoration: const BoxDecoration(
+                              color: Colors.blue,
+
+                          ),
+                        )),
                     const SizedBox(
                       width: 15,
                     ),
-                    Container(
-                      height: 55,
-                      width: 55,
-                      color: Colors.yellow,
-                    )
+                    InkWell(
+                        onTap: () {
+                          print('object');
+                          setState(() {
+                            isSelected = 4;
+
+                          });
+                          print(isSelected);
+                        },
+                        child: isSelected==4?Container(
+                          height: 55,
+                          width: 55,
+                          decoration: BoxDecoration(
+                              color: Colors.yellow,
+                              border: Border.all(color: Colors.white,width: 1.0)
+                          ),
+                        ):Container(
+                          height: 55,
+                          width: 55,
+                          decoration: BoxDecoration(
+                              color: Colors.yellow,
+
+                          ),
+                        )),
                   ],
                 ),
                 const SizedBox(
@@ -131,20 +211,23 @@ class _GameCenterViewState extends State<GameCenterView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 35,
-                      width: 65,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: Colors.grey),
-                      child: const Center(
-                        child: Center(
-                          child: Text(
-                            '1',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap:(){} ,
+                      child: Container(
+                        height: 35,
+                        width: 65,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            color: Colors.grey),
+                        child: const Center(
+                          child: Center(
+                            child: Text(
+                              '1',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
@@ -152,20 +235,23 @@ class _GameCenterViewState extends State<GameCenterView> {
                     const SizedBox(
                       width: 85,
                     ),
-                    Container(
-                      height: 35,
-                      width: 65,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: Colors.grey),
-                      child: const Center(
-                        child: Center(
-                          child: Text(
-                            '2',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap: (){},
+                      child: Container(
+                        height: 35,
+                        width: 65,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            color: Colors.grey),
+                        child: const Center(
+                          child: Center(
+                            child: Text(
+                              '2',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
@@ -178,20 +264,23 @@ class _GameCenterViewState extends State<GameCenterView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 35,
-                      width: 65,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: Colors.grey),
-                      child: const Center(
-                        child: Center(
-                          child: Text(
-                            '3',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap: (){},
+                      child: Container(
+                        height: 35,
+                        width: 65,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            color: Colors.grey),
+                        child: const Center(
+                          child: Center(
+                            child: Text(
+                              '3',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
@@ -199,20 +288,23 @@ class _GameCenterViewState extends State<GameCenterView> {
                     const SizedBox(
                       width: 85,
                     ),
-                    Container(
-                      height: 35,
-                      width: 65,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: Colors.grey),
-                      child: const Center(
-                        child: Center(
-                          child: Text(
-                            '4',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap: (){},
+                      child: Container(
+                        height: 35,
+                        width: 65,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            color: Colors.grey),
+                        child: const Center(
+                          child: Center(
+                            child: Text(
+                              '4',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
@@ -225,20 +317,22 @@ class _GameCenterViewState extends State<GameCenterView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 35,
-                      width: 65,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: Colors.grey),
-                      child: const Center(
-                        child: Center(
-                          child: Text(
-                            '5',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                    InkWell(onTap: (){},
+                      child: Container(
+                        height: 35,
+                        width: 65,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            color: Colors.grey),
+                        child: const Center(
+                          child: Center(
+                            child: Text(
+                              '5',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
@@ -246,20 +340,31 @@ class _GameCenterViewState extends State<GameCenterView> {
                     const SizedBox(
                       width: 85,
                     ),
-                    Container(
-                      height: 35,
-                      width: 65,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: Colors.grey),
-                      child: const Center(
-                        child: Center(
-                          child: Text(
-                            '6',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap: (){
+                        Get.snackbar(
+                          'Success',
+                          "You are Logged In now.",
+                          backgroundColor: Colors.green,
+                          colorText: Colors.white,
+                          snackPosition: SnackPosition.BOTTOM,
+                        );
+                      },
+                      child: Container(
+                        height: 35,
+                        width: 65,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            color: Colors.grey),
+                        child: const Center(
+                          child: Center(
+                            child: Text(
+                              '6',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
