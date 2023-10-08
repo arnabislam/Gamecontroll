@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class GameCenterView extends StatefulWidget {
   const GameCenterView({Key? key}) : super(key: key);
@@ -8,7 +9,7 @@ class GameCenterView extends StatefulWidget {
 }
 
 class _GameCenterViewState extends State<GameCenterView> {
-  bool isSelected = false;
+  String isSelected = 'Green';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,47 +61,96 @@ class _GameCenterViewState extends State<GameCenterView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
-                        onTap: () {
-                          print('object');
-                          setState(() {
-                            isSelected = !isSelected;
-                          });
-                          print(isSelected);
-                        },
-                        child: Container(
-                          height: 55,
-                          width: 55,
-                          color: isSelected ? Colors.red : Colors.green,
-                        )),
+                      onTap: () {
+                        print('green');
+                        setState(() {
+                          isSelected = 'Green';
+                        });
+                        print(isSelected);
+                      },
+                      child: Container(
+                        height: 55,
+                        width: 55,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 3,
+                            color: isSelected == 'Green'
+                                ? Colors.deepPurple
+                                : Colors.transparent,
+                          ),
+                          color: Colors.green,
+                        ),
+                      ),
+                    ),
                     const SizedBox(
                       width: 15,
                     ),
                     InkWell(
                       onTap: () {
                         //
-                        isSelected = !isSelected;
+                        setState(() {
+                          isSelected = 'Red';
+                        });
                       },
                       child: Container(
                         height: 55,
                         width: 55,
-                        color: isSelected ? Colors.green : Colors.red,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 3,
+                            color: isSelected == 'Red'
+                                ? Colors.deepPurple
+                                : Colors.transparent,
+                          ),
+                          color: Colors.red,
+                        ),
                       ),
                     ),
                     const SizedBox(
                       width: 15,
                     ),
-                    Container(
-                      height: 55,
-                      width: 55,
-                      color: Colors.blue,
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          isSelected = 'Blue';
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 3,
+                            color: isSelected == 'Blue'
+                                ? Colors.deepPurple
+                                : Colors.transparent,
+                          ),
+                          color: Colors.blueAccent,
+                        ),
+                        height: 55,
+                        width: 55,
+                      ),
                     ),
                     const SizedBox(
                       width: 15,
                     ),
-                    Container(
-                      height: 55,
-                      width: 55,
-                      color: Colors.yellow,
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          isSelected = 'Yellow';
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 3,
+                            color: isSelected == 'Yellow'
+                                ? Colors.deepPurple
+                                : Colors.transparent,
+                          ),
+                          color: Colors.yellow,
+                        ),
+                        height: 55,
+                        width: 55,
+                      ),
                     )
                   ],
                 ),
@@ -131,20 +181,42 @@ class _GameCenterViewState extends State<GameCenterView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 35,
-                      width: 65,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: Colors.grey),
-                      child: const Center(
-                        child: Center(
-                          child: Text(
-                            '1',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap: () {
+                        Get.snackbar(
+                          'Success', // Snackbar title
+                          '1 Is Selected for $isSelected', // Snackbar message
+                          backgroundColor:
+                              Colors.green, // Set the background color to green
+                          colorText:
+                              Colors.white, // Set the text color to white
+                          duration: const Duration(
+                              seconds: 3), // Adjust the duration as needed
+                          snackPosition:
+                              SnackPosition.TOP, // Position of the snackbar
+                          margin: const EdgeInsets.all(
+                              16), // Margin around the snackbar
+                          isDismissible:
+                              true, // Whether the snackbar can be dismissed by tapping outside
+                          reverseAnimationCurve:
+                              Curves.easeInBack, // Reverse animation curve
+                        );
+                      },
+                      child: Container(
+                        height: 35,
+                        width: 65,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            color: Colors.grey),
+                        child: const Center(
+                          child: Center(
+                            child: Text(
+                              '1',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
@@ -152,20 +224,42 @@ class _GameCenterViewState extends State<GameCenterView> {
                     const SizedBox(
                       width: 85,
                     ),
-                    Container(
-                      height: 35,
-                      width: 65,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: Colors.grey),
-                      child: const Center(
-                        child: Center(
-                          child: Text(
-                            '2',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap: () {
+                        Get.snackbar(
+                          'Success', // Snackbar title
+                          '2 Is Selected for $isSelected', // Snackbar message
+                          backgroundColor:
+                              Colors.green, // Set the background color to green
+                          colorText:
+                              Colors.white, // Set the text color to white
+                          duration: const Duration(
+                              seconds: 3), // Adjust the duration as needed
+                          snackPosition:
+                              SnackPosition.TOP, // Position of the snackbar
+                          margin: const EdgeInsets.all(
+                              16), // Margin around the snackbar
+                          isDismissible:
+                              true, // Whether the snackbar can be dismissed by tapping outside
+                          reverseAnimationCurve:
+                              Curves.easeInBack, // Reverse animation curve
+                        );
+                      },
+                      child: Container(
+                        height: 35,
+                        width: 65,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            color: Colors.grey),
+                        child: const Center(
+                          child: Center(
+                            child: Text(
+                              '2',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
