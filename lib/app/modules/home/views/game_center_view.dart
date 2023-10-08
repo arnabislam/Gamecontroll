@@ -77,6 +77,7 @@ class _GameCenterViewState extends State<GameCenterView> {
                     ),
                     InkWell(
                       onTap: () {
+                        //
                         isSelected = !isSelected;
                       },
                       child: Container(
