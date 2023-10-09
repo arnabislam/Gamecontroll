@@ -16,10 +16,7 @@ class _GameCenterViewState extends State<GameCenterView> {
       body: Stack(
         children: [
           Positioned.fill(
-              child: Image.network(
-            'https://img.freepik.com/free-photo/dark-abstract-texture_1017-5788.jpg?size=626&ext=jpg&ga=GA1.2.191482421.1690457803&semt=sph',
-            fit: BoxFit.cover,
-          )),
+              child: Image.asset('images/ludo_background.png',fit: BoxFit.cover,)),
           Center(
             child: Column(
               children: [
@@ -272,20 +269,42 @@ class _GameCenterViewState extends State<GameCenterView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 35,
-                      width: 65,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: Colors.grey),
-                      child: const Center(
-                        child: Center(
-                          child: Text(
-                            '3',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap: () {
+                        Get.snackbar(
+                          'Success', // Snackbar title
+                          '3 Is Selected for $isSelected', // Snackbar message
+                          backgroundColor:
+                          Colors.green, // Set the background color to green
+                          colorText:
+                          Colors.white, // Set the text color to white
+                          duration: const Duration(
+                              seconds: 3), // Adjust the duration as needed
+                          snackPosition:
+                          SnackPosition.TOP, // Position of the snackbar
+                          margin: const EdgeInsets.all(
+                              16), // Margin around the snackbar
+                          isDismissible:
+                          true, // Whether the snackbar can be dismissed by tapping outside
+                          reverseAnimationCurve:
+                          Curves.easeInBack, // Reverse animation curve
+                        );
+                      },
+                      child: Container(
+                        height: 35,
+                        width: 65,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            color: Colors.grey),
+                        child: const Center(
+                          child: Center(
+                            child: Text(
+                              '3',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
@@ -293,20 +312,42 @@ class _GameCenterViewState extends State<GameCenterView> {
                     const SizedBox(
                       width: 85,
                     ),
-                    Container(
-                      height: 35,
-                      width: 65,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: Colors.grey),
-                      child: const Center(
-                        child: Center(
-                          child: Text(
-                            '4',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap: () {
+                        Get.snackbar(
+                          'Success', // Snackbar title
+                          '4 Is Selected for $isSelected', // Snackbar message
+                          backgroundColor:
+                          Colors.green, // Set the background color to green
+                          colorText:
+                          Colors.white, // Set the text color to white
+                          duration: const Duration(
+                              seconds: 3), // Adjust the duration as needed
+                          snackPosition:
+                          SnackPosition.TOP, // Position of the snackbar
+                          margin: const EdgeInsets.all(
+                              16), // Margin around the snackbar
+                          isDismissible:
+                          true, // Whether the snackbar can be dismissed by tapping outside
+                          reverseAnimationCurve:
+                          Curves.easeInBack, // Reverse animation curve
+                        );
+                      },
+                      child: Container(
+                        height: 35,
+                        width: 65,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            color: Colors.grey),
+                        child: const Center(
+                          child: Center(
+                            child: Text(
+                              '4',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
@@ -319,20 +360,42 @@ class _GameCenterViewState extends State<GameCenterView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 35,
-                      width: 65,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: Colors.grey),
-                      child: const Center(
-                        child: Center(
-                          child: Text(
-                            '5',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap: () {
+                        Get.snackbar(
+                          'Success', // Snackbar title
+                          '5 Is Selected for $isSelected', // Snackbar message
+                          backgroundColor:
+                          Colors.green, // Set the background color to green
+                          colorText:
+                          Colors.white, // Set the text color to white
+                          duration: const Duration(
+                              seconds: 3), // Adjust the duration as needed
+                          snackPosition:
+                          SnackPosition.TOP, // Position of the snackbar
+                          margin: const EdgeInsets.all(
+                              16), // Margin around the snackbar
+                          isDismissible:
+                          true, // Whether the snackbar can be dismissed by tapping outside
+                          reverseAnimationCurve:
+                          Curves.easeInBack, // Reverse animation curve
+                        );
+                      },
+                      child: Container(
+                        height: 35,
+                        width: 65,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            color: Colors.grey),
+                        child: const Center(
+                          child: Center(
+                            child: Text(
+                              '5',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
@@ -340,20 +403,42 @@ class _GameCenterViewState extends State<GameCenterView> {
                     const SizedBox(
                       width: 85,
                     ),
-                    Container(
-                      height: 35,
-                      width: 65,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: Colors.grey),
-                      child: const Center(
-                        child: Center(
-                          child: Text(
-                            '6',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap: () {
+                        Get.snackbar(
+                          'Success', // Snackbar title
+                          '6 Is Selected for $isSelected', // Snackbar message
+                          backgroundColor:
+                          Colors.green, // Set the background color to green
+                          colorText:
+                          Colors.white, // Set the text color to white
+                          duration: const Duration(
+                              seconds: 3), // Adjust the duration as needed
+                          snackPosition:
+                          SnackPosition.TOP, // Position of the snackbar
+                          margin: const EdgeInsets.all(
+                              16), // Margin around the snackbar
+                          isDismissible:
+                          true, // Whether the snackbar can be dismissed by tapping outside
+                          reverseAnimationCurve:
+                          Curves.easeInBack, // Reverse animation curve
+                        );
+                      },
+                      child: Container(
+                        height: 35,
+                        width: 65,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            color: Colors.grey),
+                        child: const Center(
+                          child: Center(
+                            child: Text(
+                              '6',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
